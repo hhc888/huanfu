@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		</style>
+	</head>
+	<body>
+	</body>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("<div id='box'></div>").appendTo($("body"));
+		$("<img src='img/1.jpg' />").appendTo("#box");
+		$("<img src='img/2.jpg' />").appendTo("#box");
+		$("<img src='img/3.jpg' />").appendTo("#box");
+		$("<img src='img/4.jpg' />").appendTo("#box");
+		$("<img src='img/5.jpg' />").appendTo("#box");
+		$("img").css("width","150px");
+		$("#box").css({
+			"padding-top":"50px",
+			"height":"150px",
+			"width":"100%",
+			"background":"rgba(255,255,255,.3)",
+			"text-align":"center"
+		});
+		$("body").css({
+			"background-image":"url(img/1.jpg)",
+			"background-repeat": "no-repeat",
+			"margin":0,
+			"padding":0,
+			});
+			var img=$("img");
+			var boby=$("body");
+			$("img").css("cursor","pointer");
+			var imgs=["url(img/1.jpg)","url(img/2.jpg)","url(img/3.jpg)","url(img/4.jpg)","url(img/5.jpg)"];
+			function huan(obj1,obj2,url){
+				obj1.each(function(index){
+					$(this).on("click",function(){
+					obj2.css("background-image",url[index]);
+					console.log(index);
+				});
+				});
+			}
+			huan(img,boby,imgs);
+	</script>
+</html>
